@@ -4,12 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "start": "node index.js",
-=======
-    "start":"node index.js",
->>>>>>> 599578a56cb56f16371aca3e38831ed3798ed2f6
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
