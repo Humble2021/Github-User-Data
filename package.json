@@ -1,0 +1,19 @@
+{
+  "name": "github-user-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Humble2021/Github-User-Data.git"
+  },
+  "author": "Humble2021",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Humble2021/Github-User-Data/issues"
+  },
+  "homepage": "https://github.com/Humble2021/Github-User-Data#readme"
+}
