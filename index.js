@@ -58,9 +58,7 @@ app.get("/", (req, res) => {
 
 async function fetchUserData(username) {
   try {
-    const response = await axios.get(
-      `${GITHUB_API_BASE_URL}/users/${username}`
-    );
+    const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching user data:", error.message);
@@ -70,9 +68,7 @@ async function fetchUserData(username) {
 
 async function fetchRepositoriesData(username) {
   try {
-    const response = await axios.get(
-      `${GITHUB_API_BASE_URL}/users/${username}/repos`
-    );
+    const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}/repos`);
     return response.data;
   } catch (error) {
     console.error("Error fetching repositories data:", error.message);
@@ -83,7 +79,6 @@ async function fetchRepositoriesData(username) {
 app.post("/profile", async (req, res) => {
   try {
     const { username } = req.body;
-    console.log(username);
 
     if (!username) {
       return res.status(400).send("Username parameter is required.");
@@ -123,44 +118,22 @@ app.post("/profile", async (req, res) => {
           <div class="container">
             <div class="row">
               <div class="col-md-3">
-                <img src="${
-                  userData.avatar_url
-                }" alt="Profile Picture" style="max-width: 200px;" class="img-fluid rounded-circle mb-3">
+                <img src="${userData.avatar_url}" alt="Profile Picture" style="max-width: 200px;" class="img-fluid rounded-circle mb-3">
               </div>
               <div class="col-md-9">
                 <h1 class="mb-4">${userData.login}</h1>
                 <h3>User Details</h3>
                 <ul class="list-group mb-4">
-                  <li class="list-group-item">Name: ${
-                    userData.name || "Not provided"
-                  }</li>
-                  <li class="list-group-item">Bio: ${
-                    userData.bio || "Not provided"
-                  }</li>
-                  <li class="list-group-item">Location: ${
-                    userData.location || "Not provided"
-                  }</li>
-                  <li class="list-group-item">Followers: ${
-                    userData.followers
-                  }</li>
-                  <li class="list-group-item">Following: ${
-                    userData.following
-                  }</li>
-                  <li class="list-group-item">Public Repositories: ${
-                    userData.public_repos
-                  }</li>
-                  <li class="list-group-item">Public Gists: ${
-                    userData.public_gists
-                  }</li>
-                  <li class="list-group-item">Email: ${
-                    userData.email || "Not provided"
-                  }</li>
-                  <li class="list-group-item">Company: ${
-                    userData.company || "Not provided"
-                  }</li>
-                  <li class="list-group-item">Website/Blog: ${
-                    userData.blog || "Not provided"
-                  }</li>
+                  <li class="list-group-item">Name: ${userData.name || "Not provided"}</li>
+                  <li class="list-group-item">Bio: ${userData.bio || "Not provided"}</li>
+                  <li class="list-group-item">Location: ${userData.location || "Not provided"}</li>
+                  <li class="list-group-item">Followers: ${userData.followers}</li>
+                  <li class="list-group-item">Following: ${userData.following}</li>
+                  <li class="list-group-item">Public Repositories: ${userData.public_repos}</li>
+                  <li class="list-group-item">Public Gists: ${userData.public_gists}</li>
+                  <li class="list-group-item">Email: ${userData.email || "Not provided"}</li>
+                  <li class="list-group-item">Company: ${userData.company || "Not provided"}</li>
+                  <li class="list-group-item">Website/Blog: ${userData.blog || "Not provided"}</li>
                 </ul>
               </div>
             </div>
@@ -174,12 +147,8 @@ app.post("/profile", async (req, res) => {
                 <div class="card mb-3">
                   <div class="card-body">
                     <h5 class="card-title">${repo.name}</h5>
-                    <p class="card-text">${
-                      repo.description || "No description provided"
-                    }</p>
-                    <a href="${
-                      repo.html_url
-                    }" class="btn btn-primary">Go to Repo</a>
+                    <p class="card-text">${repo.description || "No description provided"}</p>
+                    <a href="${repo.html_url}" class="btn btn-primary">Go to Repo</a>
                   </div>
                 </div>
               </div>
